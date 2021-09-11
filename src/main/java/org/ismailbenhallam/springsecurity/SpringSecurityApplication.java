@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.List;
+import java.util.Set;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "org.ismailbenhallam.springsecurity.dao")
@@ -34,14 +34,14 @@ public class SpringSecurityApplication {
             user.setUsername("u");
             user.setPassword(passwordEncoder.encode("u"));
             user.setActive(true);
-            user.setAuthorities(List.of(Role.USER));
+            user.setAuthorities(Set.of(Role.USER));
             userRepository.save(user);
 
             user = new User();
             user.setUsername("i");
             user.setPassword(passwordEncoder.encode("i"));
             user.setActive(true);
-            user.setAuthorities(List.of(Role.USER, Role.ADMIN));
+            user.setAuthorities(Set.of(Role.USER, Role.ADMIN));
             userRepository.save(user);
         };
     }

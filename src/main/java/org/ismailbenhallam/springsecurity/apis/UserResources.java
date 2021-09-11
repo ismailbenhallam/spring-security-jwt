@@ -1,7 +1,5 @@
 package org.ismailbenhallam.springsecurity.apis;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.ismailbenhallam.springsecurity.models.User;
 import org.ismailbenhallam.springsecurity.services.UserService;
 import org.springframework.http.ResponseEntity;
@@ -34,4 +32,6 @@ public class UserResources {
         }
         return ResponseEntity.notFound().build();
     }
+
+
 }
